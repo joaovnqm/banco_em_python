@@ -9,6 +9,9 @@ def limpar():
 def enter():
     input("Pressione Enter para continuar.")
 
+def titulo_pagina():
+    print("* * * * * * * * * * * * * * * * * * * * Banco Píton * * * * * * * * * * * * * * * * * * * *")
+
 opcao = None
 while opcao != 0:
     limpar()
@@ -16,7 +19,7 @@ while opcao != 0:
     opcao = int(input("Digite a opção desejada:\n1 - Abrir conta\n2 - Verificar saldo\n3 - Sacar\n4 - Depositar\n0 - Sair\n"))
     if opcao == 1:
         limpar()
-        print("* * * * * * * * * * Bem vindo ao Banco Píton * * * * * * * * * * ")
+        titulo_pagina()
         nome = input("Insira o seu nome: ")
         dia_nascimento = int(input("Insira o dia do seu nascimento: "))
         mes_nascimento = int(input("Insira o mês do seu nascimento: "))
@@ -27,14 +30,14 @@ while opcao != 0:
     
     elif opcao == 2:
         limpar()
-        print("* * * * * * * * * * * * * * * * * * * * Banco Píton * * * * * * * * * * * * * * * * * * * *")
+        titulo_pagina()
         usuario.Cliente.mostrar_saldo(cliente)
         enter()
 
     
     elif opcao == 3:
         limpar()
-        print("* * * * * * * * * * * * * * * * * * * * Banco Píton * * * * * * * * * * * * * * * * * * * *")
+        titulo_pagina()
         valor = input("Por favor, digite o valor desejado: ")
         usuario.Cliente.sacar(cliente, valor)
         enter()
@@ -42,7 +45,7 @@ while opcao != 0:
 
     elif opcao == 4:
         limpar()
-        print("* * * * * * * * * * * * * * * * * * * * Banco Píton * * * * * * * * * * * * * * * * * * * *")
+        titulo_pagina()
         valor = input("Por favor, digite o valor desejado: ")
         usuario.Cliente.depositar(cliente, valor)
         enter()
@@ -56,6 +59,6 @@ while opcao != 0:
         break
 
     else:
-        print("* * * * * * * * * * * * * * * * * * * * Banco Píton * * * * * * * * * * * * * * * * * * * *\n" \
-        "Opção inválida, por favor digite a opção desejada novamente.")
+        titulo_pagina()
+        print("Opção inválida, por favor digite a opção desejada novamente.")
         enter()
