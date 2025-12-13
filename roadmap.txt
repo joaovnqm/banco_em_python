@@ -1,0 +1,20 @@
+Banco Píton Roadmap das versões.
+0.1 - *Abertura de contas de usuários com dados pessoais. Contas essas dos usuários que serão salvas em um arquivo JSON no momento. V
+*Métodos: ver_saldo(), sacar() e depositar().
+*Front-end básico rodando em console. V
+
+0.2 - *Criação do método transferir().
+*Abertura de conta de gerente bancário que, no momento dessa versão, poderá consultar o saldo de um usuário.
+
+0.3 - *Aprimorando o sistema de guardar contas em arquivo .json
+*Criação do sistema de rendimento anual do saldo bancário dos clientes com liquidez mensal.
+
+0.4 - *Consulta da taxa selic em API pública para rendimento mensal do valor guardado em cada conta.
+*Implantação de um sistema básico de login para o usuário.
+
+0.5 - *Criação do tipo de conta: Universitária.
+*Implantação do crédito ao usuário (restrito ao cliente comum).
+*O crédito deve ser controlado pelo gerente.
+
+0.6 - *Criação do sistema de empréstimos e de financiamentos.
+*Criação de um log de operações com base no datetime.

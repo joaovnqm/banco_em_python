@@ -1,6 +1,6 @@
 import os
 import subprocess
-import usuario
+import contas
 
 def limpar():
     cmd = "cls" if os.name == "nt" else "clear"
@@ -21,17 +21,19 @@ while opcao != 0:
         limpar()
         titulo_pagina()
         nome = input("Insira o seu nome: ")
+        email = input("Insira o seu e-mail: ")
         dia_nascimento = int(input("Insira o dia do seu nascimento: "))
         mes_nascimento = int(input("Insira o mês do seu nascimento: "))
         ano_nascimento = int(input("Insira o ano do seu nascimento: "))
-        cliente = usuario.Cliente(nome, dia_nascimento, mes_nascimento, ano_nascimento, "0001", "000001")
+        cliente = contas.Cliente(nome, email, dia_nascimento, mes_nascimento, ano_nascimento, "0001", 1)
         print(f"A sua conta no Banco Píton foi aberta com sucesso! Seja bem vindo(a) {cliente.nome} é um prazer tê-lo(a) conosco.")
         enter()
     
     elif opcao == 2:
         limpar()
         titulo_pagina()
-        usuario.Cliente.mostrar_saldo(cliente)
+        numero_conta = int(input("Insira o número da conta: "))
+        contas.Cliente.mostrar_saldo(numero_conta)
         enter()
 
     
@@ -39,7 +41,7 @@ while opcao != 0:
         limpar()
         titulo_pagina()
         valor = input("Por favor, digite o valor desejado: ")
-        usuario.Cliente.sacar(cliente, valor)
+        contas.Cliente.sacar(cliente, valor)
         enter()
 
 
@@ -47,7 +49,7 @@ while opcao != 0:
         limpar()
         titulo_pagina()
         valor = input("Por favor, digite o valor desejado: ")
-        usuario.Cliente.depositar(cliente, valor)
+        contas.Cliente.depositar(cliente, valor)
         enter()
 
     
