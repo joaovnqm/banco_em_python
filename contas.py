@@ -71,7 +71,14 @@ class Cliente(Usuario):
 
     def mostrar_saldo(numero_conta):
         """Mostra o saldo"""
-        print(f"O seu saldo é de: NULL")
+        try:
+            with open("clientes.json", "r", encoding="utf-8") as lista_clientes:
+                saldo = json.load(lista_clientes(numero_conta.saldo))
+                print(saldo)
+        except:
+            print("Conta não encontrada.")
+
+                
     
     def depositar(self, valor):
         self._saldo += float(valor)
